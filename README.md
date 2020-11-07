@@ -1,7 +1,7 @@
 # FlappyBird_Clone
 A flappy bird clone. 
 
-# APIs, Specifications, and libraries
+# APIs, Specifications, and etc.
 - Graphic API and others (OpenGL Specification, GLFW and Glad) 
 - UI ( ImGui)
 - Debugging, Logging (spdlog)
