@@ -307,12 +307,17 @@ void GameMode::OnImGuiRender()
 	}
 	case GameState::Paused:
 	{
-		auto pos = ImGui::GetWindowPos();
+		auto pos_1 = ImGui::GetWindowPos();
+		auto pos_2 = pos_1;
 		auto width = Tiny::Application::Get().GetWindow().GetWidth();
 		auto height = Tiny::Application::Get().GetWindow().GetHeight();
-		pos.x += width * 0.5f - 494.0f;
-		pos.y += 50.0;
-		ImGui::GetForegroundDrawList()->AddText(m_Font,120.0f,pos, 0xffffffff, "Press Enter to Play");
+		pos_1.x += width * 0.5f - 494.0f;
+		pos_2.x += width * 0.5f - 494.0f;
+		pos_1.y += 50.0;
+		pos_2.y += 200.0;
+		ImGui::GetForegroundDrawList()->AddText(m_Font,120.0f, pos_1, 0xffffffff, "Press Enter to Play");
+
+		ImGui::GetForegroundDrawList()->AddText(m_Font, 30.0f, pos_2, 0xffffffff, "Use space for vertical propulsion");
 		break;
 	}
 	}
