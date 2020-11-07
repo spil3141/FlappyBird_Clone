@@ -7,4 +7,18 @@ A flappy bird clone.
 - Debugging, Logging (spdlog)
 - Mathematics- vectors, matrices and transformation (OpenGL Mathematics or GLM) 
 
-#### This project was inspired by The Cherno Game Engine Channel. 
+# How to use
+## For Windows Only
+- Fork or directly download the repository
+- Run the "GenerateProject.bat" bash script to generate a VS2019 project solution. 
+- Build the project as a normal VS solution.
+
+Enjoy ...
+
+
+
+
+
+
+---
+##### This project was inspired by The Cherno Game Engine Channel. 
