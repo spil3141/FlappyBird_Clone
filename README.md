@@ -1,6 +1,8 @@
 # FlappyBird_Clone
 A flappy bird clone. 
 
+![FlappybirdClone.png](https://trello-attachments.s3.amazonaws.com/5f066448ad4865740ae83658/5fc37ac7ebb86d58a781eef0/be36de6364b319b10098490f8f7090a3/FlappybirdClone.png) 
+
 # APIs, Specifications, and etc.
 - Graphic API and others (OpenGL Specification, GLFW and Glad) 
 - UI ( ImGui)
