@@ -10,7 +10,8 @@ workspace "FlappyBird_Clone"
        "Release",
    }
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildc
+fg}-%{cfg.system}-%{cfg.architecture}"
 
 
 project "FlappyBird_Clone"
@@ -38,15 +39,12 @@ project "FlappyBird_Clone"
     includedirs
     {
         "%{wks.location}/%{prj.name}/src",
-        "%{wks.location}/vendor/Tiny/includes",
-        "%{wks.location}/vendor/Tiny/vendor/spdlog/include",
-        "%{wks.location}/vendor/Tiny/vendor/ImGui",
-        "%{wks.location}/vendor/Tiny/vendor/glm/include"
-    }
-
-    libdirs 
-    { 
-        "%{wks.location}/vendor/Tiny/libs",
+        "%{wks.location}/vendor/Tiny_v0.2/includes",
+        "%{wks.location}/vendor/Tiny_v0.2/vendor/spdlog/include",
+        "%{wks.location}/vendor/Tiny_v0.2/vendor/ImGui",
+        "%{wks.location}/vendor/Tiny_v0.2/vendor/glm/include",
+        "%{wks.location}/vendor/Tiny_v0.2/vendor/asio/include",
+        "%{wks.location}/vendor/Tiny_v0.2/vendor/EnTT/include"
     }
 
     links {
@@ -59,17 +57,20 @@ project "FlappyBird_Clone"
     filter "system:windows"
         systemversion "latest"
 
-        defines 
-        {
-            "T_PLATFORM_WINDOWS",
-        }
-
-
     filter "configurations:Debug"
         defines "T_DEBUG"
         symbols "On"
+
+        libdirs 
+        { 
+            "%{wks.location}/vendor/Tiny_v0.2/libs/debug",
+        }
 
     filter "configurations:Release"
         defines "T_RELEASE"
         optimize "On"
 
+        libdirs 
+        { 
+            "%{wks.location}/vendor/Tiny_v0.2/libs/release",
+        }

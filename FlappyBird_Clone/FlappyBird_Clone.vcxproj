@@ -58,8 +58,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>T_PLATFORM_WINDOWS;T_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;..\vendor\Tiny\includes;..\vendor\Tiny\vendor\spdlog\include;..\vendor\Tiny\vendor\ImGui;..\vendor\Tiny\vendor\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>T_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\vendor\Tiny_v0.2\includes;..\vendor\Tiny_v0.2\vendor\spdlog\include;..\vendor\Tiny_v0.2\vendor\ImGui;..\vendor\Tiny_v0.2\vendor\glm\include;..\vendor\Tiny_v0.2\vendor\asio\include;..\vendor\Tiny_v0.2\vendor\EnTT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -69,15 +69,15 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>Tiny.lib;Glad.lib;GLFW.lib;ImGui.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\vendor\Tiny\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\vendor\Tiny_v0.2\libs\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>T_PLATFORM_WINDOWS;T_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;..\vendor\Tiny\includes;..\vendor\Tiny\vendor\spdlog\include;..\vendor\Tiny\vendor\ImGui;..\vendor\Tiny\vendor\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>T_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\vendor\Tiny_v0.2\includes;..\vendor\Tiny_v0.2\vendor\spdlog\include;..\vendor\Tiny_v0.2\vendor\ImGui;..\vendor\Tiny_v0.2\vendor\glm\include;..\vendor\Tiny_v0.2\vendor\asio\include;..\vendor\Tiny_v0.2\vendor\EnTT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -91,22 +91,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>Tiny.lib;Glad.lib;GLFW.lib;ImGui.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\vendor\Tiny\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\vendor\Tiny_v0.2\libs\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Bird.h" />
-    <ClInclude Include="src\GameMode.h" />
-    <ClInclude Include="src\GameObject.h" />
-    <ClInclude Include="src\Random.h" />
-    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Scripts\BirdController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Bird.cpp" />
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameApp.cpp" />
-    <ClCompile Include="src\GameMode.cpp" />
-    <ClCompile Include="src\Random.cpp" />
-    <ClCompile Include="src\Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

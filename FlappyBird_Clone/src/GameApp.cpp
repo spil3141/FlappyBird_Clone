@@ -1,23 +1,27 @@
 #include "Tiny.h"
 #include "Tiny/Core/EntryPoint.h"
-#include "GameMode.h"
 
-class GameApp : public Tiny::Application
-{
-public:
-	GameApp()
+#include "Game.h"
+
+namespace GameScope {
+
+	class GameApp : public Tiny::Application
 	{
-		PushLayer(new GameMode());
+	public:
+		GameApp()
+		{
+			PushLayer(new Game());
+		};
+
+		~GameApp()
+		{
+		};
 	};
 
-	~GameApp()
-	{
-	};
-};
-
+}
 
 Tiny::Application* Tiny::CreateApplication()
 {
-	return new GameApp();
+	return new GameScope::GameApp();
 }
 
