@@ -324,10 +324,9 @@ namespace GameScope {
 			case GameState::PLAYING:
 			{
 				auto text_1_pos = pos;
-				text_1_pos.x += width * 0.5f - 494.0f;
-				text_1_pos.y += 50.0;
+				text_1_pos.x += -200.0f;
 				std::string display = "Score: " + std::to_string(birdscript->Score);
-				ImGui::GetForegroundDrawList()->AddText(m_Font, 45.0f, text_1_pos, 0xffffffff, display.c_str());
+				ImGui::GetForegroundDrawList()->AddText(m_Font, 30.0f, text_1_pos, 0xffffffff, display.c_str());
 				break;
 			}
 			case GameState::GAMEOVER:
