@@ -1,7 +1,6 @@
 # FlappyBird_Clone
 A flappy bird clone. 
 
-![image.png](https://trello-attachments.s3.amazonaws.com/5f066448ad4865740ae83658/5fc37ac7ebb86d58a781eef0/8b199d0cea2b88da958d4d56cd0021fb/image.png) 
 
 # APIs, Specifications, and etc.
 - Graphic API and others (OpenGL Specification, GLFW and Glad) 
@@ -17,7 +16,12 @@ A flappy bird clone.
 
 Enjoy ...
 
+## Screenshots
 
+
+![image.png](https://trello-attachments.s3.amazonaws.com/5f066448ad4865740ae83658/5fc37ac7ebb86d58a781eef0/8b199d0cea2b88da958d4d56cd0021fb/image.png) 
+
+![image.png](https://trello-attachments.s3.amazonaws.com/5f066448ad4865740ae83658/5fc37ac7ebb86d58a781eef0/ecd709f1ccd11877aca92074462661bb/image.png) 
 
 
 
