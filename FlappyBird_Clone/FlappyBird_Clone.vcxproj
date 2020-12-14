@@ -68,7 +68,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Tiny.lib;Glad.lib;GLFW.lib;ImGui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Tiny_debug.lib;Glad.lib;GLFW.lib;ImGui.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\vendor\Tiny_v0.2\libs\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

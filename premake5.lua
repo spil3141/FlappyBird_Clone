@@ -10,8 +10,7 @@ workspace "FlappyBird_Clone"
        "Release",
    }
 
-outputdir = "%{cfg.buildc
-fg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 
 project "FlappyBird_Clone"
@@ -47,12 +46,7 @@ project "FlappyBird_Clone"
         "%{wks.location}/vendor/Tiny_v0.2/vendor/EnTT/include"
     }
 
-    links {
-        "Tiny",
-        "Glad",
-        "GLFW",
-        "ImGui"
-    }
+    
 
     filter "system:windows"
         systemversion "latest"
@@ -66,6 +60,14 @@ project "FlappyBird_Clone"
             "%{wks.location}/vendor/Tiny_v0.2/libs/debug",
         }
 
+        links 
+        {
+        "Tiny_debug",
+        "Glad",
+        "GLFW",
+        "ImGui"
+        }
+
     filter "configurations:Release"
         defines "T_RELEASE"
         optimize "On"
@@ -73,4 +75,12 @@ project "FlappyBird_Clone"
         libdirs 
         { 
             "%{wks.location}/vendor/Tiny_v0.2/libs/release",
+        }
+
+        links 
+        {
+        "Tiny",
+        "Glad",
+        "GLFW",
+        "ImGui"
         }
