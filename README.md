@@ -1,5 +1,5 @@
 # FlappyBird_Clone
-A flappy bird clone. 
+A flappy bird clone using a graphic library i created. 
 
 
 # APIs, Specifications, and etc.
