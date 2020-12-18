@@ -5,6 +5,7 @@
 
 // Scripts
 #include "Scripts/BirdController.h"
+#include "Utils/Math.h"
 
 namespace GameScope {
 
@@ -44,12 +45,15 @@ namespace GameScope {
 		e_Title = m_MenuScene->CreateEntity("Game Title");
 		auto& title_sprite = e_Title.AddComponent<SpriteRendererComponent>();
 		title_sprite.Texture = Texture2D::Create("res/textures/TitleTexture.png");
-		e_Title.GetComponent<TransformComponent>().scale = glm::vec3(10.7f, 2.6f, 0.0f);
+		auto& title_transform = e_Title.GetComponent<TransformComponent>();
+		title_transform.scale = glm::vec3(10.7f, 2.6f, 0.0f);
+		title_transform.position = glm::vec3(0.0f, 0.0f, 0.3f);
 
 		e_MenuBG = m_MenuScene->CreateEntity("Menu Background");
-		e_MenuBG.AddComponent<SpriteRendererComponent>(glm::vec4(0.1f, 0.1f, 0.1f, 1.0f));
+		e_MenuBG.AddComponent<SpriteRendererComponent>(glm::vec4(0.1f, 0.1f, 0.1f, 0.0f));
 		auto& menubgtrans = e_MenuBG.GetComponent<TransformComponent>();
 		menubgtrans.scale = glm::vec3(50.0f, 50.0f, 0.0f);
+		menubgtrans.position = glm::vec3(0.0f, 0.0f, -0.2f);
 
 		/**********************
 			Main Scene 
@@ -70,13 +74,15 @@ namespace GameScope {
 
 		// Create Pillars
 		int number_of_platforms = 20;
+		float lerp_z = -0.2f;
 		for (int i = 0; i < number_of_platforms; i++)
 		{
+			lerp_z = Mathf::lerp(lerp_z, 0.3f, 0.1f);
 			//TOP
 			Entity PillarTop = m_ActiveScene->CreateEntity("PillarTop");
 			PillarTop.AddComponent<SpriteRendererComponent>(t_PillarsTexture);
 			auto& pt_trans = PillarTop.GetComponent<TransformComponent>();
-			pt_trans.position = glm::vec3(10.2f + (i * 20.0f), 8.0f, -0.2f);
+			pt_trans.position = glm::vec3(10.2f + (i * 20.0f), 8.0f, lerp_z);
 			pt_trans.scale = glm::vec3(15.0f, 15.0f, 0.0f);
 			pt_trans.rotation = glm::vec3(0.0f, 0.0f, 3.14f);
 
@@ -84,7 +90,7 @@ namespace GameScope {
 			Entity PillarButtom = m_ActiveScene->CreateEntity("PillarButton");
 			PillarButtom.AddComponent<SpriteRendererComponent>(t_PillarsTexture);
 			auto& pb_trans = PillarButtom.GetComponent<TransformComponent>();
-			pb_trans.position = glm::vec3(10.2f + (i * 20.0f), -8.0f, -0.2f);
+			pb_trans.position = glm::vec3(10.2f + (i * 20.0f), -8.0f, lerp_z);
 			pb_trans.scale = glm::vec3(15.0f, 15.0f, 0.0f);
 			pb_trans.rotation.z = 0.0f; //µÚÁý´Ù
 
@@ -123,12 +129,12 @@ namespace GameScope {
 			//   Background, Floor and Ceiling 
 			auto& pt = e_Player.GetComponent<TransformComponent>();
 			auto& bgt = e_BG.GetComponent<TransformComponent>();
-			bgt.position = glm::vec3(pt.position.x, 0.0f, -0.5f);
+			bgt.position = glm::vec3(pt.position.x, 0.0f, -0.2f);
 			auto& ft = e_Floor.GetComponent<TransformComponent>();
-			ft.position = glm::vec3(pt.position.x, 28.0f, -0.4f);
+			ft.position = glm::vec3(pt.position.x, 28.0f, -0.1f);
 			ft.scale = glm::vec3(40.0f, 40.0f, 0.0f);
 			auto& ct = e_Ceiling.GetComponent<TransformComponent>();
-			ct.position = glm::vec3(pt.position.x, -28.0f, -0.4f);
+			ct.position = glm::vec3(pt.position.x, -28.0f, -0.1f);
 			ct.scale = glm::vec3(40.0f, 40.0f, 0.0f);
 
 			m_ActiveScene->OnUpdate(dt);

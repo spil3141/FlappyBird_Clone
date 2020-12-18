@@ -10,6 +10,7 @@
     <ClInclude Include="src\Scripts\BirdController.h">
       <Filter>Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utils\Math.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />

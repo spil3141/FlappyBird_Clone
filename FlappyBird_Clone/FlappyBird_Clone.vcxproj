@@ -97,6 +97,7 @@
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Scripts\BirdController.h" />
+    <ClInclude Include="src\Utils\Math.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />

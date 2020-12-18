@@ -13,6 +13,15 @@ namespace GameScope {
 	public:
 		uint32_t Score = 0;
 		glm::vec2 m_Velocity = glm::vec2(0.0f, 0.0f);
+
+	private:
+		Ref<Texture2D> t_BirdTexture;
+		float m_Gravity = 0.4f;
+		float m_JumpForce = 0.5f;
+		float m_movementSpeed = 5.0f;
+
+		uint32_t m_InitalScore;
+
 	protected:
 		void OnCreate() override
 		{
@@ -20,7 +29,9 @@ namespace GameScope {
 			auto& spriteComp = GetComponent<SpriteRendererComponent>();
 			spriteComp.Texture = t_BirdTexture;
 
-			m_InitalScore = (uint32_t)GetComponent<TransformComponent>().position.x;
+			auto& transform = GetComponent<TransformComponent>();
+			transform.position = glm::vec3(0.0f, 0.0f, 0.4f);
+			m_InitalScore = transform.position.x;
 		}
 
 		void OnDestroy() override
@@ -45,13 +56,5 @@ namespace GameScope {
 			transform.position += glm::vec3(m_Velocity,0.0f) * ts.GetSeconds();
 			transform.rotation = glm::vec3(0.0f, 0.0f, glm::radians((-90.0f + m_Velocity.y) * 3.6f));
 		}
-
-	private:
-		Ref<Texture2D> t_BirdTexture;
-		float m_Gravity = 0.4f;
-		float m_JumpForce = 0.5f;
-		float m_movementSpeed = 5.0f;
-
-		uint32_t m_InitalScore;
 	};
 }
