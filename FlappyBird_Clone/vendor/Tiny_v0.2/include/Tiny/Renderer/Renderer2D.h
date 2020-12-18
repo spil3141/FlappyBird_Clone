@@ -47,7 +47,7 @@ namespace Tiny {
 		// Stats
 		struct Statistics
 		{
-			float FrameRenderTime; // collect render time for multiple frames
+			float FrameRenderTime; // contains render time of last timestep (in seconds).
 			float CurrentFrameBeginTime = 0.0f;
 			uint32_t DrawCalls = 0;
 			uint32_t QuadCount = 0;

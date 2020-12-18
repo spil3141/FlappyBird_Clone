@@ -38,12 +38,12 @@ project "FlappyBird_Clone"
     includedirs
     {
         "%{wks.location}/%{prj.name}/src",
-        "%{wks.location}/vendor/Tiny_v0.2/includes",
-        "%{wks.location}/vendor/Tiny_v0.2/vendor/spdlog/include",
-        "%{wks.location}/vendor/Tiny_v0.2/vendor/ImGui",
-        "%{wks.location}/vendor/Tiny_v0.2/vendor/glm/include",
-        "%{wks.location}/vendor/Tiny_v0.2/vendor/asio/include",
-        "%{wks.location}/vendor/Tiny_v0.2/vendor/EnTT/include"
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/include",
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/spdlog/include",
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/ImGui",
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/glm/include",
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/asio/include",
+        "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/EnTT/include"
     }
 
     
@@ -57,7 +57,7 @@ project "FlappyBird_Clone"
 
         libdirs 
         { 
-            "%{wks.location}/vendor/Tiny_v0.2/libs/debug",
+            "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/libs/debug",
         }
 
         links 
@@ -74,7 +74,7 @@ project "FlappyBird_Clone"
 
         libdirs 
         { 
-            "%{wks.location}/vendor/Tiny_v0.2/libs/release",
+            "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/libs/release",
         }
 
         links 
