@@ -46,7 +46,10 @@ project "FlappyBird_Clone"
         "%{wks.location}/%{prj.name}/vendor/Tiny_v0.2/vendor/EnTT/include"
     }
 
-    
+    postbuildcommands 
+    {
+        '{COPY} "%{wks.location}/%{prj.name}/res" "%{cfg.targetdir}/res"'
+    }
 
     filter "system:windows"
         systemversion "latest"
