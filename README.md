@@ -12,7 +12,7 @@ A flappy bird clone using a graphic library i created.
 - Fork or directly download the repository
 - Run the "scripts/GenerateProject.bat" bash script to generate a VS2019 project solution. 
 - Build the project as a normal VS solution.
-- Run with the Debugger / run the executable (bin/{system}-{architecture}/FlappyBird_Clone/FlappyBird_Clone.exe)
+- Run with the Debugger / run the executable (bin/{configuration}-{system}-{architecture}/FlappyBird_Clone/FlappyBird_Clone.exe)
 
 ## Dependencies 
  - Visual Studio 2019 
