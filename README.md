@@ -27,4 +27,3 @@ Enjoy ...
 
 
 ---
-##### This project was inspired by The Cherno Game Engine Channel. 
